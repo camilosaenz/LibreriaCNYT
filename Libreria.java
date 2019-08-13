@@ -61,4 +61,21 @@ public class Libreria {
 		return divComplejo;
 	}
 	
+	
+	
+	/**
+	 * Sumar dos vectores complejos
+	 * @param v1 vector complejo a sumar 
+	 * @param v2 vector complejo a sumar 
+	 * @return sumVcomplejo resultado de la operacion realizada
+	 
+	
+	public static Complejo sumaVectores(Complejo v1, Complejo v2) {
+		ArrayList<Double> v1 = new ArrayList<Double>();
+		ArrayList<Double> v2 = new ArrayList<Double>();
+		
+	}
+	*/
+	
+	
 }

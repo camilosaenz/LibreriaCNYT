@@ -1,8 +1,6 @@
 import static org.junit.Assert.assertEquals;
 
 
-import java.util.ArrayList;
-
 import org.junit.Test;
 
 
@@ -70,7 +68,7 @@ public class Pruebas {
 		assertEquals(2,b.getImag(),1.0);
 	}
 	
-	
+	 
 	
 	
 	

@@ -79,13 +79,21 @@ public class Complejo {
 		
 	}
 	
-	public ArrayList<Double> conversion(){
+	public ArrayList<Double> conversionCaP(){
 		ArrayList<Double> ListaPolar = new ArrayList<Double>();
 		ListaPolar.add(this.getModulo());
 		ListaPolar.add(this.getFase());
 		return ListaPolar;
 	}
 	
+	public ArrayList<Double> conversionPaC(double r ,double a){
+		ArrayList<Double> ListaCartesiana = new ArrayList<Double>();
+		double x = r * Math.cos(a);
+		double y = r * Math.sin(a);
+		ListaCartesiana.add(x);
+		ListaCartesiana.add(y);
+		return ListaCartesiana;
+	}
 	
 	
 	
