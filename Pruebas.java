@@ -15,29 +15,29 @@ public class Pruebas {
 
 	@Test
 	public void SumarComplejos() {
-		Complejo a = new Complejo(-3,1);
-		Complejo b = new Complejo(1,-5);
+		Complejo a = new Complejo(2,1);
+		Complejo b = new Complejo(3,2);
 		Complejo res = Libreria.suma(a,b);
-		assertEquals(0,res.getReal(),2.0);
-		assertEquals(3,res.getImag(),4.0);
+		assertEquals(5,res.getReal(),1.0);
+		assertEquals(3,res.getImag(),1.0);
 	}
 	
 	@Test
 	public void RestarComplejos() {
-		Complejo a = new Complejo(-3,1);
-		Complejo b = new Complejo(1,-5);
+		Complejo a = new Complejo(10,5);
+		Complejo b = new Complejo(3,2);
 		Complejo res = Libreria.resta(a,b);
-		assertEquals(2,res.getReal(),4.0);
-		assertEquals(-5,res.getImag(),6.0);
+		assertEquals(7,res.getReal(),1.0);
+		assertEquals(3,res.getImag(),1.0);
 	}
 	
 	@Test
 	public void ProductoComplejos() {
-		Complejo a = new Complejo(-3,1);
-		Complejo b = new Complejo(1,-5);
+		Complejo a = new Complejo(2,3);
+		Complejo b = new Complejo(4,5);
 		Complejo res = Libreria.producto(a,b);
-		assertEquals(2,res.getReal(),6.0);
-		assertEquals(5,res.getImag(),6.0);
+		assertEquals(-7,res.getReal(),6.0);
+		assertEquals(22,res.getImag(),6.0);
 	}
 	
 	@Test 
@@ -65,18 +65,11 @@ public class Pruebas {
 	
 	@Test 
 	public void conjugadoComplejo() {
-		Complejo b = new Complejo(4,-3);
-		assertEquals(new Complejo(4.0,3.0),b.getConjugado());
+		Complejo b = new Complejo(3,2);
+		assertEquals(3,b.getReal(),1.0);
+		assertEquals(2,b.getImag(),1.0);
 	}
 	
-	@Test
-	public void conversionPolar() {
-		Complejo a = new Complejo(4,-3);
-		ArrayList<Double> polar = new ArrayList<Double>();
-		polar.add(5.0);
-		polar.add(-0.6435011087932844);
-		assertEquals(polar,a.conversion());
-	}
 	
 	
 	

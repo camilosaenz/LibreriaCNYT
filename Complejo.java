@@ -64,9 +64,8 @@ public class Complejo {
 	 * @return conjugado
 	 */
 	
-	public Complejo getConjugado() {
-		this.imaginario = this.imaginario*(-1);
-		return this;
+	public Complejo Conjugado(double imaginario, double real) {
+		return new Complejo(real,imaginario*(-1));
 	}
 	
 	/**
