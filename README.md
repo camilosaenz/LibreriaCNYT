@@ -1,4 +1,4 @@
-# LibreriaCNYT
+# Libreria CNYT
 
 
 Este repositorio fue creado para la materia de Ciencias Naturales y Tecnologia, cuyo objetivo es crear una libreria que permita realizar operaciones entre números complejos desarrollada en Java. 
