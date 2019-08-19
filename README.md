@@ -14,7 +14,12 @@ Este repositorio fue creado para la materia de Ciencias Naturales y Tecnologia, 
 - Division de números complejos: Se define la división de dos números complejos a través de la multiplicación por el inverso. 
 - Módulo de números complejos: Se define como la raíz cuadrada de la suma de los cuadrados de la parte entera y la parte imaginaria.
 - Conjugado de números complejos: El conjugado de un número complejo se obtiene cambiando el signo de su componente imaginaria. 
-- Conversión entre representaciones polar y cartesiano de números complejos: La forma polar de un número complejo es otra forma de representar un número complejo consta de dos componentes: módulo y argumento. La forma cartesiana de un número complejo es 
-- Retornar la fase de un número complejo.
+- Conversión entre representaciones polar y cartesiano de números complejos: La forma polar de un número complejo es otra forma de representar un número complejo consta de dos componentes: módulo y argumento. La forma cartesiana de un número complejo esta conformada por una parte real y otra imaginaria.
+- Retornar la fase de un número complejo la cual me indicará su posición o ángulo.
+
+### Implementacion de la Version 1
+
+Esta libreria de operaciones entre números complejos fue desarrollada en Java, desarrollamos dos clases principales una llamada Libreria la cual tiene las 4 operaciones básicas entre dos complejos y la clase Complejo en donde realizamos operaciones con un solo complejo.
+
 
 
