@@ -56,26 +56,13 @@ public class Libreria {
 	public static Complejo division(Complejo a, Complejo b) {
 		double divReal = (a.getReal()*b.getReal())+(a.getImag()*b.getImag());
 		double divImag = (b.getReal()*a.getImag())-(a.getReal()*b.getImag());
-		double divisor = Math.pow(a.getImag(), 2)+ Math.pow(b.getImag(),2);
-		Complejo divComplejo = new Complejo(divReal/divisor, divImag/divisor);
-		return divComplejo;
+		double dividendo = Math.pow(b.getReal(), 2)+ Math.pow(b.getImag(),2);
+		return new Complejo(divReal/dividendo,divImag/dividendo);
 	}
 	
 	
 	
-	/**
-	 * Sumar dos vectores complejos
-	 * @param v1 vector complejo a sumar 
-	 * @param v2 vector complejo a sumar 
-	 * @return sumVcomplejo resultado de la operacion realizada
-	 
 	
-	public static Complejo sumaVectores(Complejo v1, Complejo v2) {
-		ArrayList<Double> v1 = new ArrayList<Double>();
-		ArrayList<Double> v2 = new ArrayList<Double>();
-		
-	}
-	*/
 	
 	
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Complejo {
 	private double real, imaginario,modulo,fase;
@@ -64,13 +65,14 @@ public class Complejo {
 	 * @return conjugado
 	 */
 	
-	public Complejo Conjugado(double imaginario, double real) {
-		return new Complejo(real,imaginario*(-1));
+	public Complejo getConjugado() {
+		this.imaginario=this.imaginario*(-1);
+		return this;
 	}
 	
 	/**
 	 * Retorna la fase del numero complejo
-	 * @return
+	 * @return fase
 	 */
 	
 	public double getFase() {
@@ -78,6 +80,10 @@ public class Complejo {
 		return fase;
 		
 	}
+	/**
+	 * Retorna la conversion del numero complejo de Cartesiano a Polar
+	 * @return ListaPolar
+	 */
 	
 	public ArrayList<Double> conversionCaP(){
 		ArrayList<Double> ListaPolar = new ArrayList<Double>();
@@ -86,16 +92,37 @@ public class Complejo {
 		return ListaPolar;
 	}
 	
-	public ArrayList<Double> conversionPaC(double r ,double a){
-		ArrayList<Double> ListaCartesiana = new ArrayList<Double>();
-		double x = r * Math.cos(a);
-		double y = r * Math.sin(a);
-		ListaCartesiana.add(x);
-		ListaCartesiana.add(y);
-		return ListaCartesiana;
+	/**
+	 * Retorna la conversion del numero complejo de Polar a Cartesiano
+	 * @return Complejo 
+	 */
+	public static Complejo conversionPaC(double r ,double angulo){
+		double x = ((r)*(Math.cos(angulo)));
+		double y = ((r)*(Math.sin(angulo)));
+		return new Complejo(x,y);
 	}
 	
 	
+	@Override
+	public boolean equals(Object o) {
+		if(this==o) {
+			return true;
+		}
+		if(o==null || getClass()!=o.getClass()) {
+			return false;
+		}
+		Complejo that = (Complejo) o;
+		return Double.compare(that.real,real)==0 && 
+				Double.compare(that.imaginario, imaginario)==0 &&
+				Double.compare(that.modulo, modulo)==0 &&
+				Double.compare(that.fase, fase)==0;
+		}
 	
+	@Override
+	public int hashCode() {
+		return Objects.hash(real,imaginario,modulo,fase);
+	
+	}
+
 
 }
