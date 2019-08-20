@@ -25,10 +25,10 @@ Esta libreria de operaciones entre números complejos fue desarrollada en Java, 
 ### ¿Como se instala?
 
 Para instalar esta libreria es necesario tener en cuenta los siguientes pasos:
-    - Entrar a la carpeta del ordenador donde deseamos descargar la libreria.
-    - Dar click derecho y dar el click en la opción "Git Bash".
-    - Utilizar el comando git clone, junto con el link de nuestra libreria (git clone https://github.com/camilavieda04/LibreriaCNYT.git)
-    - Una vez clonada la libreria, procedemos a abrir un editor de código.
-    - Finalmente hacemos uso de la libreria.
+- Entrar a la carpeta del ordenador donde deseamos descargar la libreria.
+- Dar click derecho y dar el click en la opción "Git Bash".
+- Utilizar el comando git clone, junto con el link de nuestra libreria (git clone https://github.com/camilavieda04/LibreriaCNYT.git)
+- Una vez clonada la libreria, procedemos a abrir un editor de código.
+- Finalmente hacemos uso de la libreria.
     
 
