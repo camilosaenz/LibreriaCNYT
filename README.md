@@ -30,5 +30,33 @@ Para instalar esta libreria es necesario tener en cuenta los siguientes pasos:
 - Utilizar el comando git clone, junto con el link de nuestra libreria (git clone https://github.com/camilavieda04/LibreriaCNYT.git)
 - Una vez clonada la libreria, procedemos a abrir un editor de código.
 - Finalmente hacemos uso de la libreria.
-    
+
+### ¿Como usar?
+
+Al instalar la libreria encontraremos 3 tipos de clases principales, una llamada Libreria en donde encontramos las 4 operaciones básicas entre dos números complejos (Suma, Resta, Multiplicación y División) cada una de estas operaciones tiene una descripción de su función principal, parametros requeridos y la variable que retornara. 
+
+En la clase Complejo encontramos las operaciones que se pueden realizar a partir de un solo número complejo, las cuales son las siguientes:
+-getReal: Nos retorna la parte real del número complejo.
+-setReal: Cambia la parte real del número complejo por una nueva que se le inserta.
+-getImag: Retorna la parte imaginaria del número.
+-setImag: Cambia la parte imaginaria del número complejo por una nueva que se le inserta. 
+-getModulo: Retorna el módulo del número complejo, el cual es la distancia entre este número al origen de coordenadas.
+-getConjugado: Retorna el conjugado del número complejo, el cual es el simétrico respecto del eje real.
+-getFase: Retorna la fase del número complejo, que se define como el ángulo que forma el número conn el eje real. 
+-conversionCaP: Retorna la conversión del número complejo de forma cartesiana a polar.
+-conversionPaC: Retorna la conversión del numero complejo de forma polar a cartesiana.
+
+Y por último esta la clase Pruebas que se explicara a continuación. 
+
+
+### ¿Como probar?
+
+Para probar esta libreria con diferentes casos es necesario tener en cuenta los siguientes pasos:
+- Una vez instalada la libreria, encontramos 3 clases llamadas (Complejo,Libreria y Pruebas).
+- Entramos en la clase Pruebas y decidimos que tipo de operación queremos probar. 
+- Al escoger la operación debemos insertar el número a probar.
+- En la variable resp insertar la respuesta que deberia dar nuestro programa con los números insertados anteriormente.
+- Por último damos click en la opción correr de Eclipse y asi probaremos si el caso que insertamos es correcto o no.
+
+
 
