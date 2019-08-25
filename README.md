@@ -36,15 +36,15 @@ Para instalar esta libreria es necesario tener en cuenta los siguientes pasos:
 Al instalar la libreria encontraremos 3 tipos de clases principales, una llamada Libreria en donde encontramos las 4 operaciones básicas entre dos números complejos (Suma, Resta, Multiplicación y División) cada una de estas operaciones tiene una descripción de su función principal, parametros requeridos y la variable que retornara. 
 
 En la clase Complejo encontramos las operaciones que se pueden realizar a partir de un solo número complejo, las cuales son las siguientes:
--getReal: Nos retorna la parte real del número complejo.
--setReal: Cambia la parte real del número complejo por una nueva que se le inserta.
--getImag: Retorna la parte imaginaria del número.
--setImag: Cambia la parte imaginaria del número complejo por una nueva que se le inserta. 
--getModulo: Retorna el módulo del número complejo, el cual es la distancia entre este número al origen de coordenadas.
--getConjugado: Retorna el conjugado del número complejo, el cual es el simétrico respecto del eje real.
--getFase: Retorna la fase del número complejo, que se define como el ángulo que forma el número conn el eje real. 
--conversionCaP: Retorna la conversión del número complejo de forma cartesiana a polar.
--conversionPaC: Retorna la conversión del numero complejo de forma polar a cartesiana.
+- getReal: Nos retorna la parte real del número complejo.
+- setReal: Cambia la parte real del número complejo por una nueva que se le inserta.
+- getImag: Retorna la parte imaginaria del número.
+- setImag: Cambia la parte imaginaria del número complejo por una nueva que se le inserta. 
+- getModulo: Retorna el módulo del número complejo, el cual es la distancia entre este número al origen de coordenadas.
+- getConjugado: Retorna el conjugado del número complejo, el cual es el simétrico respecto del eje real.
+- getFase: Retorna la fase del número complejo, que se define como el ángulo que forma el número conn el eje real. 
+- conversionCaP: Retorna la conversión del número complejo de forma cartesiana a polar.
+- conversionPaC: Retorna la conversión del numero complejo de forma polar a cartesiana.
 
 Y por último esta la clase Pruebas que se explicara a continuación. 
 
