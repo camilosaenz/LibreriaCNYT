@@ -97,12 +97,12 @@ public class Complejo {
 	 * @return Complejo 
 	 */
 	public static Complejo conversionPaC(double r ,double angulo){
-		System.out.println(r);
-		System.out.println(angulo);
+		//System.out.println(r);
+		//System.out.println(angulo);
 		double x = r*Math.cos(angulo);
 		double y = r*Math.sin(angulo);
-		System.out.println(x);
-		System.out.println(y);
+		//System.out.println(x);
+		//System.out.println(y);
 		return new Complejo(x,y);
 
 	}
