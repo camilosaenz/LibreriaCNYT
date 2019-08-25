@@ -1,3 +1,5 @@
+package src.test.java;
+import src.main.java.Complejos.*;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
@@ -7,7 +9,7 @@ import org.junit.Test;
 
 
 
-public class Pruebas {
+public class PruebasNumeroComplejo {
 	@Test
 	public void test() {
 	}
