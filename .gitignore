@@ -208,3 +208,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/linux,windows,eclipse,netbeans,intellij+all
+/Complejo.class
+/Libreria.class
+/Pruebas.class

@@ -64,13 +64,13 @@ public class Pruebas {
 		assertEquals(new Complejo(4.0,3.0),b.getConjugado());
 	}
 	
-	/*@Test 
+	@Test 
 	public void polarAcartesiano() {
-		double a = 3;
-		double b = 21;
+		double a = 2;
+		double b = 10;
 		Complejo resp = Complejo.conversionPaC(a, b);
-		assertEquals(2.8,resp.getReal(),1.0);
-	}*/
+		assertEquals(1.96,resp.getReal(),0.1);
+	}
 	
 	@Test 
 	public void cartesianoApolar() {
