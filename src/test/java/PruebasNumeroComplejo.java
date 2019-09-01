@@ -1,9 +1,7 @@
 package src.test.java;
 import src.main.java.Complejos.*;
 import static org.junit.Assert.assertEquals;
-
 import java.util.ArrayList;
-
 import org.junit.Test;
 
 
@@ -66,14 +64,14 @@ public class PruebasNumeroComplejo {
 		assertEquals(new Complejo(4.0,3.0),b.getConjugado());
 	}
 	
-	@Test 
+	/*@Test 
 	public void polarAcartesiano() {
 		double a = 2;
 		double b = 10;
 		Complejo resp = Complejo.conversionPaC(a, b);
 		assertEquals(1.96,resp.getReal(),0.1);
 	}
-	
+	*/
 	@Test 
 	public void cartesianoApolar() {
 		Complejo a = new Complejo(4,-3);

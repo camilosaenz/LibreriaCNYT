@@ -76,6 +76,26 @@ public class LibreriaMatrizComplejo {
 		}
 		
 	}
+	/**
+	 * Restar dos matrices de numeros complejos 
+	 * @param m1 Matriz de numeros complejos a restar
+	 * @param m2 Matriz de numeros complejos a restar
+	 * @return resMatrizComplejo resultado de la operacion realizada
+	 */
+	public MatrizComplejo restaMatrizComplejos(MatrizComplejo m1, MatrizComplejo m2) {
+		MatrizComplejo resMatrizComplejo = new MatrizComplejo(m1.getColumna(),m1.getFila());
+		if((m1.getFila()==m2.getFila()) && (m1.getColumna()==m2.getColumna())) {
+			for(int i=0;i<m1.getColumna();i++) {
+				for(int j=0;j<m2.getFila();j++) {
+					resMatrizComplejo.getMatrizCompl()[i][j]=Libreria.resta(m1.getMatrizCompl()[i][j],m2.getMatrizCompl()[i][j]);
+				}
+			}
+			
+		}
+		return resMatrizComplejo;
+	}
+	
+	
 	
 	/**
 	 * Inversa de matrices Complejos
@@ -102,8 +122,107 @@ public class LibreriaMatrizComplejo {
 		return multem;
 	}
 	
+	/**
+	 * Multiplicación de dos matrices complejas
+	 * @param m1 matriz de numeros complejos a multiplicar
+	 * @param m2 matriz de numeros complejos a multiplicar
+	 * @return multi resultado de la operación realizada.
+	 */
+	public MatrizComplejo multiplicacionMatrices(MatrizComplejo m1, MatrizComplejo m2) {
+		MatrizComplejo multi = new MatrizComplejo(m1.getColumna(),m2.getFila());
+		if(m1.getFila()==m2.getColumna()) {
+		for(int i=0; i<m1.getColumna();i++) {
+			for(int j=0; j<m2.getFila();j++) {
+				Complejo a = new Complejo(0,0);
+				a = Libreria.suma(a, Libreria.producto(m1.getMatrizCompl()[i][j], m2.getMatrizCompl()[j][i]));
+				multi.getMatrizCompl()[i][j] = a;
+			}
+			}
+		}
+		return multi;
+	
+	}
 	
 	
+	
+	/**
+	 * Matriz Transpuesta de una matriz de numeros complejos
+	 * @param m1 matriz de numeros complejos 
+	 * @return matrizTranspuesta de una matriz m1 dada
+	 */
+	public MatrizComplejo transpuesta(MatrizComplejo m1) {
+		MatrizComplejo matrizTranspuesta = new MatrizComplejo(m1.getColumna(),m1.getFila());
+		for(int i=0; i<matrizTranspuesta.getColumna();i++) {
+			for(int j=0; j<matrizTranspuesta.getFila();j++) {
+				matrizTranspuesta.getMatrizCompl()[i][j]=m1.getMatrizCompl()[j][i];
+			}
+		}
+		return matrizTranspuesta;
+	}
+	
+	/**
+	 * Matriz conjugada de una matriz de numeros complejos 
+	 * @param m1 matriz de numeros complejos
+	 * @return matrizConjugada de una matriz m1 dada
+	 */
+	public MatrizComplejo conjugada(MatrizComplejo m1) {
+		MatrizComplejo matrizConjugada = new MatrizComplejo(m1.getColumna(),m1.getFila());
+		for(int i=0; i<matrizConjugada.getColumna();i++) {
+			for(int j=0; i<matrizConjugada.getFila();j++) {
+				matrizConjugada.getMatrizCompl()[i][j] = m1.getMatrizCompl()[i][j].getConjugado();
+			}
+		}
+		return matrizConjugada;
+	}
+	
+	
+	
+	/**
+	 * Matriz adjunta de una matriz de numeros complejos 
+	 * @param m1 matriz de numeros complejos
+	 * @return matrizAdjunta de una matriz m1 dada
+	 */
+	
+	public MatrizComplejo adjunta(MatrizComplejo m1) {
+		return conjugada(transpuesta(m1));
+	}
+	
+	
+	/**
+	 * Norma de una matriz de numeros complejos 
+	 * @param m1 matriz de numeros complejos
+	 * @return norma numero de tipo double que retorna la norma de una matriz m1 dada
+	 */
+	
+	public double normaMatriz(MatrizComplejo m1) {
+		double a=0.0;
+		for(int i=0;i<m1.getColumna();i++) {
+			for(int j=0;j<m1.getFila();j++) {
+				a+=Math.pow(m1.getMatrizCompl()[i][j].getModulo(), 2);
+			}
+		}
+		double norma = Math.sqrt(a);
+		return norma;
+		
+	}
+	
+	/**
+	 * Calcular la distancia entre dos matrices dadas
+	 * @param m1 matriz de numeros complejos 
+	 * @param m2 matriz de numeros complejos
+	 * @return distancia numero de tipo double que retorna la distancia entree dos matrices de complejos dadas
+	 */
+	public double distanciaMatriz(MatrizComplejo m1, MatrizComplejo m2) {
+		double distancia=this.normaMatriz(this.restaMatrizComplejos(m1, m2));
+		return distancia;
+		
+	}
+	
+	
+	/**
+	 * Revisa si la matriz dada es unitaria 
+	 * @param m
+	 */
 	
 	
 	
