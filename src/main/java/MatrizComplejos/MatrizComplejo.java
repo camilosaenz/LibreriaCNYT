@@ -30,6 +30,10 @@ public class MatrizComplejo {
 		return columna;
 	}
 	
+	public void addComplejo(Complejo a, int i, int j) {
+		this.matrizCompl[i][j]=a;
+	}
+	
 	@Override
 	public boolean equals(Object o) {
 		if(this==o) {

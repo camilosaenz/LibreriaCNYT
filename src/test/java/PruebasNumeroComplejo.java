@@ -1,10 +1,8 @@
 package src.test.java;
 import src.main.java.Complejos.*;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import java.util.ArrayList;
 import org.junit.Test;
-
-
 
 
 public class PruebasNumeroComplejo {
@@ -80,6 +78,8 @@ public class PruebasNumeroComplejo {
 		ListaPolar.add(-0.6435011087932844);
 		assertEquals(ListaPolar,a.conversionCaP());
 	}
+	
+	
 	
 	 
 	

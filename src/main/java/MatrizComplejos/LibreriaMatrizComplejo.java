@@ -29,11 +29,6 @@ public class LibreriaMatrizComplejo {
 	
 	}
 	
-	/**
-	 * Inversa de vectores complejos
-	 */
-	
-	
 	
 	
 	/**
@@ -51,6 +46,28 @@ public class LibreriaMatrizComplejo {
 		}
 		return multev;
 	}
+	
+
+	/**
+	 * Matriz identidad
+	 * @param m1 Matriz de numeros complejos
+	 * @return matrizI
+	 */
+	public MatrizComplejo MatrizIdentidad(MatrizComplejo m1) {
+		MatrizComplejo matrizI=new MatrizComplejo(m1.getColumna(),m1.getFila());
+		for(int i=0;i<m1.getColumna();i++) {
+			for(int j=0;j<m1.getFila();j++) {
+				if(i==j) {
+					matrizI.getMatrizCompl()[i][j]=new Complejo(1,0);
+				}
+				else {
+					matrizI.getMatrizCompl()[i][j]=new Complejo(1,0);
+				}
+			}
+		}
+		return matrizI;
+	}
+	
 	
 	
 	/**
@@ -83,25 +100,37 @@ public class LibreriaMatrizComplejo {
 	 * @return resMatrizComplejo resultado de la operacion realizada
 	 */
 	public MatrizComplejo restaMatrizComplejos(MatrizComplejo m1, MatrizComplejo m2) {
-		MatrizComplejo resMatrizComplejo = new MatrizComplejo(m1.getColumna(),m1.getFila());
 		if((m1.getFila()==m2.getFila()) && (m1.getColumna()==m2.getColumna())) {
-			for(int i=0;i<m1.getColumna();i++) {
-				for(int j=0;j<m2.getFila();j++) {
+			MatrizComplejo resMatrizComplejo = new MatrizComplejo(m1.getFila(),m1.getColumna());
+			for(int i=0;i<m1.getFila();i++) {
+				for(int j=0;j<m2.getColumna();j++) {
 					resMatrizComplejo.getMatrizCompl()[i][j]=Libreria.resta(m1.getMatrizCompl()[i][j],m2.getMatrizCompl()[i][j]);
 				}
 			}
-			
+			return resMatrizComplejo;
 		}
-		return resMatrizComplejo;
+		else {
+			return null;
+		}
 	}
 	
 	
-	
+	/*
 	/**
 	 * Inversa de matrices Complejos
-	 */
+	 * @param m1 Matriz de numeros complejos
+	 * @return inversa resultado de la operacion realizada 
+	 
+	public MatrizComplejo matrizInversa(MatrizComplejo m1) {
+		MatrizComplejo inversa= new MatrizComplejo(m1.getColumna(),m1.getFila());
+		for(int i=0;i<m1.getColumna();i++) {
+			for(int j=0;j<m1.getFila();j++) {
+				inversa.getMatrizCompl()[i][j]=Complejo.getConjugado();
+			}
+		}
+	}
 	
-	
+	*/
 	
 	
 	
@@ -112,11 +141,11 @@ public class LibreriaMatrizComplejo {
 	 * @return multem resultado de la operacion realizada
 	 */
 	
-	public MatrizComplejo productoEscalarMatriz(MatrizComplejo m1, Complejo a) {
-		MatrizComplejo multem = new MatrizComplejo(m1.getFila(),m1.getColumna());		
-			for(int i=0; i<m1.getFila();i++) {
-				for (int j=0;i<m1.getColumna();j++) {
-					multem.getMatrizCompl()[i][j] = Libreria.producto(m1.getMatrizCompl()[i][j],a);
+	public MatrizComplejo productoEscalarMatriz( Complejo a, MatrizComplejo m1) {
+		MatrizComplejo multem = new MatrizComplejo(m1.getColumna(),m1.getFila());		
+			for(int i=0; i<m1.getColumna();i++) {
+				for (int j=0;i<m1.getFila();j++) {
+					multem.getMatrizCompl()[i][j] = Libreria.producto(a,m1.getMatrizCompl()[i][j]);
 			}
 		}
 		return multem;
@@ -218,11 +247,63 @@ public class LibreriaMatrizComplejo {
 		
 	}
 	
+
+	
 	
 	/**
 	 * Revisa si la matriz dada es unitaria 
-	 * @param m
+	 * @param m1 matriz de numeros complejos
+	 * @return boolean que identifica si es unitaria o no
 	 */
+	public Boolean Unitaria(MatrizComplejo m1) {
+		Boolean u=false;
+		if(multiplicacionMatrices(m1,adjunta(m1))==MatrizIdentidad(m1)){
+			u=true;
+		}
+		return u;
+	}
+	
+	
+	/**
+	 * Revisa si la matriz dada es Hermitiana
+	 * @param m1 matriz de numeros complejos 
+	 * @return boolean que identifica si es hermitiana o no
+	 */
+	public Boolean Hermitiana(MatrizComplejo m1) {
+		Boolean h = false;
+		if(adjunta(m1).equals(m1)) {
+			h=true;
+			return h;
+		}
+		else {
+			h=false;
+			return h;
+		}
+		
+	}
+	
+	/**
+	 * Calcular el producto tensor entre dos matrices
+	 * @param m1 matriz de numeros complejos
+	 * @param m2 matriz de numeros complejos 
+	 * @return prodTensor resultado de la operación realizada
+	 */
+	
+	public MatrizComplejo productoTensor(MatrizComplejo m1, MatrizComplejo m2) {
+		MatrizComplejo prodTensor= new MatrizComplejo(m1.getColumna()*m2.getColumna(),m1.getFila()*m2.getFila());
+		for(int i=0; i<m1.getColumna();i++) {
+			for(int j=0; j<m1.getFila();j++) {
+				for(int k=0;k<m2.getColumna();k++) {
+					for(int l=0; l<m2.getFila();l++) {
+						prodTensor.getMatrizCompl()[i*m2.getColumna()+k][j*m2.getFila()+l]=Libreria.producto(m1.getMatrizCompl()[i][j],m2.getMatrizCompl()[k][l]);
+					}
+				}
+			}
+		}
+		return prodTensor;
+	}
+	
+	
 	
 	
 	
