@@ -141,30 +141,31 @@ public class PruebasMatricesComplejas {
 	
 	@Test
 	public void esConjugada() {
-		LibreriaMatrizComplejo a =new LibreriaMatrizComplejo();
-		MatrizComplejo m1 = new MatrizComplejo(3,3);
-		m1.addComplejo(new Complejo(3,2), 0, 0);
-		m1.addComplejo(new Complejo(1,0), 1, 0);
-		m1.addComplejo(new Complejo(4,-1), 2, 0);
-		m1.addComplejo(new Complejo(0,0), 0, 1);
-		m1.addComplejo(new Complejo(4,2), 1, 1);
-		m1.addComplejo(new Complejo(0,0), 2, 1);
-		m1.addComplejo(new Complejo(5,-6), 0, 2);
-		m1.addComplejo(new Complejo(0,1), 1, 2);
-		m1.addComplejo(new Complejo(4,0), 2, 2);
-		
-		MatrizComplejo resp = new MatrizComplejo(3,3);
-		resp.addComplejo(new Complejo(3,-2), 0, 0);
-		resp.addComplejo(new Complejo(1,0), 1, 0);
-		resp.addComplejo(new Complejo(4,1), 2, 0);
-		resp.addComplejo(new Complejo(0,0), 0, 1);
-		resp.addComplejo(new Complejo(4,-2), 1, 1);
-		resp.addComplejo(new Complejo(0,0), 2, 1);
-		resp.addComplejo(new Complejo(5,6), 0, 2);
-		resp.addComplejo(new Complejo(0,-1), 1, 2);
-		resp.addComplejo(new Complejo(4,0), 2, 2);
-		
-		resp.equals(a.conjugada(m1));
+			LibreriaMatrizComplejo a= new LibreriaMatrizComplejo();
+	        MatrizComplejo m1 = new MatrizComplejo(3,3);
+	        m1.addComplejo(new Complejo(3,2),0,0);
+	        m1.addComplejo(new Complejo(1,0),1,0);
+	        m1.addComplejo(new Complejo(4,-1),2,0);
+	        m1.addComplejo(new Complejo(0,0),0,1);
+	        m1.addComplejo(new Complejo(4,2),1,1);
+	        m1.addComplejo(new Complejo(0,0),2,1);
+	        m1.addComplejo(new Complejo(5,-6),0,2);
+	        m1.addComplejo(new Complejo(0,1),1,2);
+	        m1.addComplejo(new Complejo(4,0),2,2);
+
+	        MatrizComplejo resp = new MatrizComplejo(3,3);
+	        resp.addComplejo(new Complejo(3,-2),0,0);
+	        resp.addComplejo(new Complejo(1,0),1,0);
+	        resp.addComplejo(new Complejo(4,1),2,0);
+	        resp.addComplejo(new Complejo(0,0),0,1);
+	        resp.addComplejo(new Complejo(4,-2),1,1);
+	        resp.addComplejo(new Complejo(0,0),2,1);
+	        resp.addComplejo(new Complejo(5,6),0,2);
+	        resp.addComplejo(new Complejo(0,-1),1,2);
+	        resp.addComplejo(new Complejo(4,0),2,2);
+
+
+	        resp.equals(a.conjugada(m1));
 		
 	}
 	
@@ -197,6 +198,7 @@ public class PruebasMatricesComplejas {
 		resp.equals(a.adjunta(m1));
 	}
 	
+	
 	@Test 
 	public void norma() {
 		LibreriaMatrizComplejo a =new LibreriaMatrizComplejo();
@@ -205,7 +207,7 @@ public class PruebasMatricesComplejas {
 		m1.addComplejo(new Complejo(-6,0), 1, 0);
 		m1.addComplejo(new Complejo(2,0), 2, 0);
 		
-		assertEquals(7,a.normaMatriz(m1),1.0);
+		assertEquals(7,a.normaMatriz(m1),0.5);
 	}
 	
 	@Test 
@@ -220,7 +222,7 @@ public class PruebasMatricesComplejas {
 		m1.addComplejo(new Complejo(6,3), 0, 0);
 		m1.addComplejo(new Complejo(5,1), 1, 0);
 
-		assertEquals(6.557438524302,a.distanciaMatriz(m1, m2),1.0);
+		assertEquals(6.557438524302,a.distanciaMatriz(m1, m2),0.5);
 
 	}
 	
@@ -257,6 +259,25 @@ public class PruebasMatricesComplejas {
 		
 		assertTrue(a.Hermitiana(m1));
 	}
+	
+	@Test
+	public void prodInterno() {
+		LibreriaMatrizComplejo a=new LibreriaMatrizComplejo();
+		MatrizComplejo m1 = new MatrizComplejo(2,1);
+		m1.addComplejo(new Complejo(1,2),0, 0);
+		m1.addComplejo(new Complejo(1,2),1, 0);
+		
+		MatrizComplejo m2 = new MatrizComplejo(2,1);
+		m2.addComplejo(new Complejo(6,3),0, 0);
+		m2.addComplejo(new Complejo(5,1),1, 0);
+		
+		
+		Complejo resp = new Complejo(3,26);
+		
+		resp.equals(a.productoInterno(m1, m2));
+	}
+	
+	
 	
 	
 	@Test
